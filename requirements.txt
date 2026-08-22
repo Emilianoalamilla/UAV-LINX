@@ -1,0 +1,7 @@
+PySide6>=6.5.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+openpyxl>=3.1.2
+numpy>=1.24.0
+mplcursors>=0.5.2
+scipy>=1.10.0

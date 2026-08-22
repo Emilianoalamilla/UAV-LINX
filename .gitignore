@@ -1,0 +1,21 @@
+# Ambientes Virtuales
+.venv/
+.venv_312/
+venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs
+.vscode/
+.idea/
+
+# Artefactos y compilación local
+*.pdf
+*.aux
+*.log
+*.out

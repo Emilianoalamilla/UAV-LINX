@@ -1,0 +1,58 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\title{Proyecto LINX: Diseño Conceptual de UAV Solar de Gran Altitud y Larga Autonomía (HALE)}
+\author{Josua Emiliano Alamilla Jimenez \and Roció Nayeli Oliva González \and Asesor: Dr. Gustavo Medina Tanco}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento sintetiza el alcance, la metodología y el progreso actual del proyecto LINX, el cual tiene como objetivo el diseño de un Vehículo Aéreo No Tripulado (UAV) de tipo HALE (High Altitude and Long Endurance) alimentado por energía solar, destinado a operar en la estratosfera de manera autónoma y autosuficiente.
+\end{abstract}
+
+\section{Alcance del Proyecto (Scope)}
+El objetivo principal del proyecto LINX es diseñar, desarrollar y validar un UAV propulsado por energía solar capaz de transportar y mantener operativa una carga útil de hasta 5 kg a gran altitud (estratosfera) durante periodos prolongados (meses).
+\begin{itemize}
+    \item \textbf{Autonomía:} Totalmente autónomo con capacidad de navegación, estabilización y gestión energética.
+    \item \textbf{Región de Operación:} Cercano a la latitud de México, entre 19$^\circ$ y 24$^\circ$ N.
+    \item \textbf{Especificaciones Clave:} Peso máximo de despegue (MTOW) de 30 kg, envergadura de 13.384 m, y superficie alar de 14.928 m$^2$.
+    \item \textbf{Marco Legal:} Operación bajo NOM-107-SCT3-2019, requiriendo permisos para operación BVLOS y autorización para Aeronave Experimental por encima de 400 ft.
+\end{itemize}
+
+\section{Metodología}
+El proyecto se divide en 5 fases, avanzando desde el diseño conceptual hasta la manufactura y pruebas:
+\begin{enumerate}
+    \item \textbf{Fase A:} Finalizada.
+    \item \textbf{Fase B (Diseño Conceptual):} Dimensionamiento inicial de pesos (carga útil, estructura, baterías, etc.), selección de configuración y análisis de viabilidad (38\% del esfuerzo).
+    \item \textbf{Fase C (Diseño Detallado):} Refinamiento aerodinámico y estructural, selección de componentes y simulaciones detalladas (19\% del esfuerzo).
+    \item \textbf{Fase D (Manufactura y Pruebas):} Construcción de prototipos y modelos de ingeniería, pruebas en tierra y vuelo (38\% del esfuerzo).
+    \item \textbf{Fase E (Documentación y Entrega):} Reporte final (6\% del esfuerzo).
+\end{enumerate}
+
+Para el desarrollo aerodinámico se ha optado por el método de paneles (XFLR5) y CFD. El diseño de la aeronave parte del cálculo del peso total $W_{TO} = W_{PL} + W_{S} + W_{B} + W_{E}$, equilibrando los pesos de baterías (aprox. 23.35 kg en algunas iteraciones, limitado por el peso total de 30 kg) y estructura. 
+Además, se empleó AHP (Proceso de Jerarquía Analítica de Saaty) para priorizar los requerimientos aerodinámicos y de manufacturabilidad. En cuanto a gestión de riesgos, se usó la metodología FMEA obteniendo como mayores riesgos el déficit energético nocturno y posibles fallos de propulsión.
+
+\section{Trabajo Realizado e Integración}
+Hasta la fecha, se ha avanzado significativamente en el diseño conceptual y detallado:
+\begin{itemize}
+    \item \textbf{Configuración Aerodinámica:} Se evaluó la configuración de fuselaje integrado con estabilizador y configuración "Tandem Pusher". Se definieron perfiles alares y se optimizó el ángulo diedro y alabeo a lo largo del día para mejorar la captación solar.
+    \item \textbf{Sistema Propulsivo:} Se seleccionó una hélice con diámetro de 1.35 m, coeficiente de empuje $C_T=0.1411$, operando a 50 rev/s, con una potencia real por motor de 6720 W.
+    \item \textbf{Sistema de Potencia (Solar):} Se realizó un benchmarking exhaustivo de celdas solares limitadas a 5 kg. Las celdas Spectrolab fueron elegidas por ofrecer el mayor margen de diseño y cumplir los voltajes del bus, considerando las horas solares efectivas (solsticio de invierno) en la latitud 19.4$^\circ$.
+    \item \textbf{Estado del Arte y Referencias:} Se cuenta con una amplia recopilación de datos, incluyendo libros de diseño (Raymer, Aircraft Design), artículos sobre UAVs solares y análisis de estabilidad (revisados desde el repositorio bibliográfico del proyecto).
+\end{itemize}
+
+\section{Conclusión}
+El proyecto LINX representa un avance importante en la aeronáutica nacional, integrando sistemas solares, diseño estructural liviano y metodologías de ingeniería de sistemas rigurosas para lograr un vuelo estratosférico sostenido.
+
+\end{document}

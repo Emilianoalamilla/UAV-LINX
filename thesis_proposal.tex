@@ -30,7 +30,7 @@ El objetivo principal del proyecto LINX es diseñar, desarrollar y validar un UA
     \item \textbf{Marco Legal:} Operación bajo NOM-107-SCT3-2019, requiriendo permisos para operación BVLOS y autorización para Aeronave Experimental por encima de 400 ft.
 \end{itemize}
 
-\section{Metodología}
+\section{Metodología y Dimensionamiento}
 El proyecto se divide en 5 fases, avanzando desde el diseño conceptual hasta la manufactura y pruebas:
 \begin{enumerate}
     \item \textbf{Fase A:} Finalizada.
@@ -40,8 +40,34 @@ El proyecto se divide en 5 fases, avanzando desde el diseño conceptual hasta la
     \item \textbf{Fase E (Documentación y Entrega):} Reporte final (6\% del esfuerzo).
 \end{enumerate}
 
-Para el desarrollo aerodinámico se ha optado por el método de paneles (XFLR5) y CFD. El diseño de la aeronave parte del cálculo del peso total $W_{TO} = W_{PL} + W_{S} + W_{B} + W_{E}$, equilibrando los pesos de baterías (aprox. 23.35 kg en algunas iteraciones, limitado por el peso total de 30 kg) y estructura. 
-Además, se empleó AHP (Proceso de Jerarquía Analítica de Saaty) para priorizar los requerimientos aerodinámicos y de manufacturabilidad. En cuanto a gestión de riesgos, se usó la metodología FMEA obteniendo como mayores riesgos el déficit energético nocturno y posibles fallos de propulsión.
+\subsection{Ecuaciones de Dimensionamiento y Rendimiento}
+Partiendo de la información estructurada, el diseño inicial estima el peso total de despegue ($W_{TO}$) como la suma de sus componentes:
+\begin{equation}
+    W_{TO} = W_{PL} + W_{S} + W_{B} + W_{E}
+\end{equation}
+Donde $W_{PL}$ es el peso de carga útil, $W_S$ es el peso de sistemas, $W_B$ es el peso de baterías y $W_E$ es el peso vacío.
+
+Para el análisis aerodinámico y el equilibrio en vuelo, la fuerza de sustentación ($L$) se iguala al peso:
+\begin{equation}
+    L = W = \frac{1}{2} \rho v^2 S C_L
+\end{equation}
+
+El cálculo de la potencia requerida y disponible es fundamental. La potencia en el eje (Brake Horse Power, BHP) para el motor eléctrico se estima como:
+\begin{equation}
+    BHP = \frac{V \cdot I \cdot \eta_{motor}}{746}
+\end{equation}
+
+El empuje ($T$) proporcionado por las hélices y la eficiencia propulsiva ($\eta_P$) se calculan mediante:
+\begin{equation}
+    T = C_T \rho n^2 D^4
+\end{equation}
+\begin{equation}
+    \eta_P = \frac{T \cdot V}{BHP}
+\end{equation}
+
+Además, el balance energético (Power Budget) toma en consideración las eficiencias de la cadena de potencia ($\eta_{cadena} = \eta_{prop} \cdot \eta_{motor} \cdot \eta_{ESC}$).
+
+Para el desarrollo aerodinámico se ha optado por el método de paneles (XFLR5) y CFD. Además, se empleó AHP (Proceso de Jerarquía Analítica de Saaty) para priorizar los requerimientos aerodinámicos y de manufacturabilidad. En cuanto a gestión de riesgos, se usó la metodología FMEA obteniendo como mayores riesgos el déficit energético nocturno y posibles fallos de propulsión.
 
 \section{Trabajo Realizado e Integración}
 Hasta la fecha, se ha avanzado significativamente en el diseño conceptual y detallado:

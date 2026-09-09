@@ -17,14 +17,31 @@ El objetivo principal del proyecto LINX es diseñar, desarrollar y validar un Ve
   - Superficie alar: 14.928 m²
 - **Marco Legal:** Regulado bajo la NOM-107-SCT3-2019, con permisos obligatorios de la AFAC para operaciones BVLOS (Beyond Visual Line of Sight) y autorización para Aeronave Experimental para vuelos por encima de los 122 m (400 ft).
 
-## 2. Metodología
+## 2. Metodología y Dimensionamiento
 
 El proyecto está estructurado en cinco fases principales, dividiendo el presupuesto y esfuerzo:
 - **Fase A:** Culminada.
-- **Fase B (Diseño Conceptual - 38%):** Estimación de pesos ($W_{TO} = W_{PL} + W_{S} + W_{B} + W_{E}$), selección de configuración, dimensionamiento inicial y requerimientos.
+- **Fase B (Diseño Conceptual - 38%):** Estimación de pesos, selección de configuración, dimensionamiento inicial y requerimientos.
 - **Fase C (Diseño Detallado - 19%):** Análisis aerodinámico profundo (método de paneles, CFD), diseño estructural y análisis de estabilidad.
 - **Fase D (Manufactura y Pruebas - 38%):** Producción de prototipos y modelos de ingeniería, pruebas de estrés y vuelo.
 - **Fase E (Documentación y Entrega - 6%):** Manuales y reporte final de tesis.
+
+### Ecuaciones de Dimensionamiento y Rendimiento
+Partiendo de la información estructurada, el diseño inicial estima el peso total de despegue ($W_{TO}$) como la suma de sus componentes:
+$$ W_{TO} = W_{PL} + W_{S} + W_{B} + W_{E} $$
+Donde $W_{PL}$ es el peso de carga útil, $W_S$ es el peso de sistemas, $W_B$ es el peso de baterías y $W_E$ es el peso vacío.
+
+Para el análisis aerodinámico y el equilibrio en vuelo, la fuerza de sustentación ($L$) se iguala al peso:
+$$ L = W = \frac{1}{2} \rho v^2 S C_L $$
+
+El cálculo de la potencia requerida y disponible es fundamental. La potencia en el eje (Brake Horse Power, BHP) para el motor eléctrico se estima como:
+$$ BHP = \frac{V \cdot I \cdot \eta_{motor}}{746} $$
+
+El empuje ($T$) proporcionado por las hélices y la eficiencia propulsiva ($\eta_P$) se calculan mediante:
+$$ T = C_T \rho n^2 D^4 $$
+$$ \eta_P = \frac{T \cdot V}{BHP} $$
+
+Además, el balance energético (Power Budget) toma en consideración las eficiencias de la cadena de potencia ($\eta_{cadena} = \eta_{prop} \cdot \eta_{motor} \cdot \eta_{ESC}$).
 
 La organización del diseño utiliza el **Proceso de Jerarquía Analítica (AHP de Saaty)** para ponderar requerimientos aerodinámicos (ej. minimizar arrastre parásito, estabilidad aerodinámica, operar a bajos números de Reynolds) y de manufacturabilidad (limitar deformaciones, evitar fatiga y flutter). Además, se ha aplicado un **FMEA (Análisis de Modos de Falla y Efectos)** para evaluar riesgos, identificando el déficit energético (noche) y fallas de propulsión como los riesgos más críticos.
 

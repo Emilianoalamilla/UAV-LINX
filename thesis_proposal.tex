@@ -67,7 +67,28 @@ El empuje ($T$) proporcionado por las hélices y la eficiencia propulsiva ($\eta
 
 Además, el balance energético (Power Budget) toma en consideración las eficiencias de la cadena de potencia ($\eta_{cadena} = \eta_{prop} \cdot \eta_{motor} \cdot \eta_{ESC}$).
 
-Para el desarrollo aerodinámico se ha optado por el método de paneles (XFLR5) y CFD. Además, se empleó AHP (Proceso de Jerarquía Analítica de Saaty) para priorizar los requerimientos aerodinámicos y de manufacturabilidad. En cuanto a gestión de riesgos, se usó la metodología FMEA obteniendo como mayores riesgos el déficit energético nocturno y posibles fallos de propulsión.
+Para el desarrollo aerodinámico se ha optado por el método de paneles (XFLR5) y CFD. 
+
+\section{Toma de Decisiones y Análisis de Riesgos}
+
+\subsection{Descomposición Funcional y QFD}
+El proceso de diseño partió de un \textbf{Análisis de Descomposición Funcional} exhaustivo, mapeando la función global a requerimientos específicos de los subsistemas. Para traducir estos requerimientos y priorizarlos, se emplearon herramientas como el Despliegue de la Función de Calidad (QFD) en conjunto con el \textbf{Proceso de Jerarquía Analítica (AHP de Saaty)}. 
+
+Se priorizaron dos grandes rubros:
+\begin{itemize}
+    \item \textbf{Aerodinámica:} Los requerimientos con mayor peso fueron generar sustentación suficiente en crucero (R04, peso 0.0704) y reducir el arrastre parásito para maximizar la relación L/D (R05, peso 0.0704).
+    \item \textbf{Manufacturabilidad y Estructura:} Se dio prioridad a limitar las deformaciones para mantener la integridad aerodinámica (R19, peso 0.0405) y a la validación estructural ante cargas y vibraciones (R22, peso 0.0386).
+\end{itemize}
+
+\subsection{Análisis de Modos de Falla y Efectos (FMEA)}
+Para garantizar la fiabilidad del UAV en misiones BVLOS y de larga duración, se implementó la metodología \textbf{FMEA}. Se evaluó el Número de Prioridad de Riesgo (RPN) multiplicando la Probabilidad (P), Severidad (S) y Detección (D). 
+Los riesgos más críticos identificados fueron:
+\begin{enumerate}
+    \item \textbf{Déficit energético nocturno (RPN: 15):} Crítico durante el crucero estratosférico, mitigado mediante un estricto balance de batería y eficiencia solar.
+    \item \textbf{Fallo de Motor/ESC (RPN: 12):} Riesgo mayor durante la fase de ascenso.
+    \item \textbf{Pérdida de Enlace C2 (RPN: 12):} Asociado a las misiones de larga distancia y gran altitud.
+    \item \textbf{Aterrizaje Forzoso / Hard Landing (RPN: 12):} Debido a las dimensiones del ala y la ligereza estructural.
+\end{enumerate}
 
 \section{Trabajo Realizado e Integración}
 Hasta la fecha, se ha avanzado significativamente en el diseño conceptual y detallado:

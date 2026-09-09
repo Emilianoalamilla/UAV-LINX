@@ -43,9 +43,22 @@ $$ \eta_P = \frac{T \cdot V}{BHP} $$
 
 Además, el balance energético (Power Budget) toma en consideración las eficiencias de la cadena de potencia ($\eta_{cadena} = \eta_{prop} \cdot \eta_{motor} \cdot \eta_{ESC}$).
 
-La organización del diseño utiliza el **Proceso de Jerarquía Analítica (AHP de Saaty)** para ponderar requerimientos aerodinámicos (ej. minimizar arrastre parásito, estabilidad aerodinámica, operar a bajos números de Reynolds) y de manufacturabilidad (limitar deformaciones, evitar fatiga y flutter). Además, se ha aplicado un **FMEA (Análisis de Modos de Falla y Efectos)** para evaluar riesgos, identificando el déficit energético (noche) y fallas de propulsión como los riesgos más críticos.
+## 3. Toma de Decisiones y Análisis de Riesgos
 
-## 3. Trabajo Realizado e Integración
+### Descomposición Funcional y QFD
+El proceso de diseño partió de un **Análisis de Descomposición Funcional** para mapear la función global hacia los subsistemas específicos (fuselaje, propulsión, potencia, etc.). Posteriormente, se tradujeron estos requerimientos técnicos utilizando **QFD** y se evaluaron usando el **Proceso de Jerarquía Analítica (AHP de Saaty)** para darles peso y prioridad.
+- **Aerodinámica:** Se ponderó como prioritario generar sustentación suficiente en crucero (R04: 0.0704) y reducir arrastre parásito para maximizar L/D (R05: 0.0704).
+- **Manufacturabilidad:** Se priorizó el limitar las deformaciones (R19: 0.0405) y validar la estructura ante vibraciones y cargas (R22: 0.0386).
+
+### Análisis de Modos de Falla y Efectos (FMEA)
+Para garantizar la seguridad y fiabilidad del UAV en misiones BVLOS estratosféricas, se utilizó la matriz **FMEA** multiplicando Probabilidad, Severidad y Detección para obtener el Número de Prioridad de Riesgo (RPN). 
+Los riesgos más probables y críticos identificados fueron:
+1. **Déficit energético (noche) [RPN: 15]:** Ocurrente en crucero.
+2. **Fallo de Motor/ESC [RPN: 12]:** Crítico durante el ascenso.
+3. **Pérdida de Enlace C2 [RPN: 12]:** Crítico en crucero a gran altitud.
+4. **Hard Landing [RPN: 12]:** Durante la aproximación final.
+
+## 4. Trabajo Realizado e Integración
 
 Se han alcanzado importantes hitos en el diseño:
 - **Configuración Aerodinámica:** Se seleccionó un modelo de **fuselaje integrado** con estabilizadores y motores en configuración "Tandem Pusher". Se analizó el efecto del ángulo diedro y alabeo para optimizar la captación de luz solar a lo largo del día.
